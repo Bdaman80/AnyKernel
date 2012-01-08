@@ -18,11 +18,12 @@ package_extract_dir("system", "/system");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d");
 unmount("/system");
 
-mount("ext3", "EMMC", "/dev/block/mmcblk0p29", "/system");
-package_extract_dir("system", "/system");
-set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d");
-unmount("/system");
-
+#Lets try without theses for now
+#mount("ext3", "EMMC", "/dev/block/mmcblk0p29", "/system");
+#package_extract_dir("system", "/system");
+#set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d");
+#unmount("/system");
+#
 ui_print("Extracting zImage...");
 package_extract_dir("kernel", "/tmp");
 ui_print("Adding kernel boot.img...");
