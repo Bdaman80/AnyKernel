@@ -1,0 +1,23 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: xqNJXh6v0smVuW3+inEpPZcsAsA=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: xJPxJsB7p+pFF5oY0DxA0ah5R6s=
+
+Name: kernel/zImage
+SHA1-Digest: g2FoZu25MElbOkurFPBvoncThKs=
+
+Name: system/lib/modules/bcm4330.ko
+SHA1-Digest: NNYVFoUsyCMZG0rOFJCt6BJfIGs=
+
+Name: kernel/abootimg
+SHA1-Digest: 8nexyvGEYGvjAZp16R0POcK5ZH4=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: Vtp5818S4/K5RXI7qh8MbhOcgxw=
+
+Name: kernel/dd
+SHA1-Digest: rOwZGDSWibK/KRpe2bQ5YphEX18=
+
+
