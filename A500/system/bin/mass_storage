@@ -1,0 +1,46 @@
+#!/system/bin/sh
+
+# Getitnowmarketing@gmail.com for use in acer icona a500 with my kernel
+
+if [ ! -e /mnt/external_sd ]; then
+	echo "Missing /mnt/external_sd"
+	echo "Aborting!!"
+	exit 1
+fi
+
+case $1 in
+
+    on)
+
+	CHECKSD=`mount | grep /mnt/external_sd`
+		if [ "$CHECKSD" != "" ]; then
+			echo "Unmounting external_sd"
+			# lets call a sync here for good measure in case a write is taking place
+			sync
+			umount /mnt/external_sd
+		fi
+
+	echo /dev/block/mmcblk1p1 > /sys/devices/platform/usb_mass_storage/lun0/file
+	echo "USB Mass Storage enabled"
+        ;;
+
+    off)
+
+	sync
+	echo "" > /sys/devices/platform/usb_mass_storage/lun0/file
+	echo "USB Mass Storage disabled"
+	echo "Remounting external_sd for vold to manage"
+	
+	CHECKSD=`mount | grep /mnt/external_sd`
+		if [ "$CHECKSD" != "" ]; then
+			umount /mnt/external_sd
+		fi
+	
+	mount -o rw -t vfat /dev/block/vold/179:33 /mnt/external_sd
+	;;
+
+    --)
+        ;;
+esac
+
+exit 0
